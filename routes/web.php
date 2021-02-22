@@ -17,19 +17,17 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [PagesController::class, 'index']);
+// Route::get('/about', function (){
+//     return view('pages/about');
+// });
 
-Route::get('/about', function (){
-    return view('pages/about');
-});
-
-Route::get('/services', function (){
-    return view('services');
-});
-
-Route::get('/contact', function (){
-    return view('contact');
-});
+// Route::get('/', [PagesController::class, 'index']);
+// Route::get('/', 'PagesController@index');
+// Route::get('/', 'App\Http\Controllers\PagesControllers@index');
+Route::view('/', 'index');
+Route::view('/about', 'pages/about');
+Route::view('/contact', 'pages/contact');
+Route::view('/services', 'pages/services');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
